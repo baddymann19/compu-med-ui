@@ -5,7 +5,7 @@ const CreateVisit = ({ fetchVisits, patients }) => {
   const [visit, setVisit] = useState({ dateTime: '', visitType: '', reason: '', familyHistory: '', patientId: '' });
 
   const visitTypes = ['HOME', 'DOCTOR_OFFICE'];
-  const reasonTypes = ['VISIT', 'RECURRING', 'URGENT'];
+  const reasonTypes = ['FIRST', 'RECURRING', 'URGENT'];
 
   const handleChange = (e) => {
     setVisit({ ...visit, [e.target.name]: e.target.value });
