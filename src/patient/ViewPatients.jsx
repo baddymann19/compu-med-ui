@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const ViewPatients = ({ patients }) => {
   return (
     <div  style={{ justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'row' }}>
-      <h1>View Patient</h1>
-        <Link to="/patient/create">Create Patient</Link>
+      <h1>View Patients</h1>
       {patients.map((patient, index) => (
         <div key={patient.id} >
           <h2>{index + 1}. Name: {patient.name} {patient.surname}</h2>
