@@ -49,7 +49,7 @@ function App() {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        maxHeight: '50vh',
+                        height: '50vh',
                         overflowY: 'auto'
                     }}>
                         <ViewPatients patients={patients} style={{width: '50%'}}/>
@@ -62,7 +62,7 @@ function App() {
                         maxHeight: '50vh',
                         overflowY: 'auto'
                     }}>
-                        Visits Register
+                        <h2 style={{textAlign: 'center', width:'100%'}}>Visits Register</h2>
                     </div>
                     <div style={{
                         display: 'flex',
