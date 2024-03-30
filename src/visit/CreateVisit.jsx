@@ -5,6 +5,7 @@ const CreateVisit = ({ fetchVisits, patients }) => {
   const [visit, setVisit] = useState({ dateTime: '', visitType: '', reason: '', familyHistory: '', patientId: '' });
 
   const visitTypes = ['HOME', 'DOCTOR_OFFICE'];
+  const reasonTypes = ['VISIT', 'RECURRING', 'URGENT'];
 
   const handleChange = (e) => {
     setVisit({ ...visit, [e.target.name]: e.target.value });
@@ -35,8 +36,13 @@ const CreateVisit = ({ fetchVisits, patients }) => {
           <option key={type} value={type}>{type}</option>
         ))}
       </select><br/>
+      <select name="reason" value={visit.reason} onChange={handleChange} required style={{width: '100%', height: '50px'}}>
+        <option value="">Select Reason</option>
+        {reasonTypes.map(reason => (
+          <option key={reason} value={reason}>{reason}</option>
+        ))}
+      </select><br/>
       <input name="dateTime" type="datetime-local" value={visit.dateTime} onChange={handleChange} placeholder="DateTime" required style={{width: '100%', height: '50px'}}/><br/>
-      <input name="reason" value={visit.reason} onChange={handleChange} placeholder="Reason" required style={{width: '100%', height: '50px'}}/><br/>
       <textarea name="familyHistory" value={visit.familyHistory} onChange={handleChange} placeholder="FamilyHistory" required style={{width: '100%', height: '100px'}}/><br/>
       <button type="submit">Create Visit</button>
       <br/>
